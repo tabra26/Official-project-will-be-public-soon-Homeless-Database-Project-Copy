@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/* Global Reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Text Selection Style */
+::selection{
+  background: rgb(0,123,255,0.3);
+}
+/* Content Container */
+.content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0px;
+}
+
+/* Navbar Styling */
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 35px 0;
+  transition: all 0.3s ease;
+}
+/* Sticky Navbar Style */
+.navbar.sticky{
+  background: #1b1b1b;
+  padding: 15px 0;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+.navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Logo Styling */
+.navbar .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Menu List Styling */
+.navbar .menu-list{
+  display: inline-flex;
+}
+.menu-list li{
+  list-style: none;
+}
+.menu-list li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.menu-list li a {
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: transparent; 
+}
+
+/* style change on hover */
+.menu-list li a:hover {
+  color: #598baf; 
+  transform: scale(1.05); 
+  background-color: #f0f0f0; 
+}
+
+/* Banner Styling */
+.banner {
+  background: url('https://wallpapercave.com/wp/wp9064233.jpg') no-repeat;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.about{
+  padding: 30px 0;
+}
+.about .title{
+  font-size: 38px;
+  font-weight: 700;
+}
+.about p{
+  padding-top: 20px;
+  text-align: justify;
+}
+.icon{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.icon.cancel-btn{
+  position: absolute;
+  right: 35px;
+}
+
+@media (max-width: 868px) {
+  body.disabled{
+    overflow: hidden;
+  }
+  .icon{
+    display: block;
+  }
+  .icon.hide{
+    display: none;
+  }
+  .navbar .menu-list{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    left: -100%;
+    top: 0px;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    background: #222;
+    transition: all 0.3s ease;
+  }
+  .navbar.show .menu-list{
+    left: 0%;
+  }
+  .navbar .menu-list li{
+    margin-top: 45px;
+  }
+  .navbar .menu-list li a{
+    font-size: 23px;
+    margin-left: -100%;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .navbar.show .menu-list li a{
+    margin-left: 0px;
+  }
+}
+
+  /* Styling for the navigation tabs */
+  nav {
+    background-color: #1c2951;
+    padding: 10px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 30px;
+    font-size: 20px;
+  }
+
+  div {
+    padding: 20px;
+  }
+  
+   /* about us styling */
+  .homepage-description,
+  .additional-info {
+  border: 2px solid #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.homepage-description h2,
+.additional-info h2 {
+  margin-top: 0;
+}
+
+.additional-info {
+  width: 25%;
+  float:right;
+  height: 500px;
+  padding-left: 5px;
+  margin-left: 5px;
+}
+.square-box {
+    border: 2px solid #333;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .homepage-description h2,
+  .additional-info h2,
+  .square-box h2 {
+    margin-top: 0;
+  }
+  
+#iframe {
+  width:100%;
+  height:100%;
+  padding: 10px;
+}
+
+#frame-aside{
+  float:left;
+  width:65%;
+  height:700px;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+#keyImage{
+  border-radius: 50%;
+}
+
+ /* Dropdown Button */
+ .dropbtn {
+  background-color: #3c539a;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown menu for services tab (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  width: 570px;
+
+  min-height: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  /* overflow: scroll; */
+}
+
+/* service links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #2060b9;}
+
+
+#searchInput {
+  padding: 10px;
+  margin: 10px;
+  width: 165px;
+  border-radius: 10px;
+}
+
+#searchButton {
+  padding: 9px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: -15px;
+  height: 45px;
+  min-width: 10px;
+  margin-top: 10px; 
+  word-wrap: nowrap;
+  align-self: auto;
+}
+
+#searchButton:hover{
+  background-color: #45a049;
+}
+
+/* banner search bar */
+.container {
+  width: 850px;
+  background: #090f216d;
+  padding: 0%;
+  margin: 0 auto;
+  margin-top: 250px;
+  border-radius: 10px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+input {
+  min-width: 20px;
+  padding: 8px;
+  margin: 0 4px 0 0;
+  border: 1px solid #666;
+  border-radius: 5px;
+  height: 45px;
+  order: 0;
+  flex: 1 1 auto;
+  align-self: auto;
+  /* display: flex; */
+  flex-direction: row;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.bannerButton {
+  padding: 8px 16px;
+  min-height: 48px;
+  min-width: 10px;
+  word-wrap: nowrap;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  order: 2;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.bannerButton:hover{
+  background-color: #45a049;;
+}
+
+p2{
+  color: white;
+  font-size: 25px;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 18%;
+  word-spacing: 230px;
+  font-weight: bold;
+}
+
+
+/* service tab table styling */
+  p[data-type="service-description"]{
+    font-size: 18px;
+    line-height: 1.6; 
+    margin: 0; 
+    margin-top: 20px;
+  }
+
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; 
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; 
+  }
+  
+  th {
+    background-color: #f2f2f2; 
+  }
+  
+  td p {
+    margin: 0;
+  }
+  
+  td button {
+  color: white;
+  background-color: #1b1b1b;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;   
+  margin-left: 2%;
+  padding: 10px;
+  border-radius: 10px;
+  }
+  
+  td button:hover {
+    color: #598baf; 
+    transform: scale(1.05); 
+    background-color: #f0f0f0; 
+  }
+  
+/* CSS for the shelter boxes */
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service-box {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  width: 300px; /* Adjust the width as needed */
+  background-color: #f9f9f9;
+}
+
+
+
+#user-location {
+  position: absolute;
+  top: 0;
+  left:5%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+#description {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+
+#map #infowindow-content {
+  display: inline;
+}
+
+.pac-card {
+  background-color: #fff;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  padding: 0 0.5em;
+  font: 400 18px Roboto, Arial, sans-serif;
+  overflow: hidden;
+  font-family: Roboto;
+  padding: 0;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+#target {
+  width: 345px;
+}
+
+/* language styling */
+.language {
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 30px;
+  font-size: 20px;
+  
+}
+
+
+#language-dropdown {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  width: 80px;
+  min-height: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  /* overflow: scroll;  */
+}
+
+#map{
+  height: 500px; /* Set map height */
+  width: 70%; /* Set map width to full container width */
+  margin-top: 25px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#legend div {
+  display: inline-block; /* Display legend items side by side */
+  margin-right: 100px; /* Space between items */
+  font-family: 'Poppins', sans-serif;
+/*  border: 1px solid #000; /* Add a border */
+/*  background-color: #fff; /* Set background to white */
+}
+
+.legend-icon {
+  vertical-align: middle; /* Align icon with text vertically */
+  height: 40px; /* Icon height */
+  width: 40px; /* Icon width */
+  margin-right: 5px; /* Space between icon and text */
+}
+
+#nearby {
+  width: 28%;
+  height: 100%;
+  padding: 10px;
+  float: right;
+  border: 1px solid #000;
+}
+
+#ad {
+  padding: 10px;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#miles {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
